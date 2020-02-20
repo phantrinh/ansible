@@ -1,0 +1,21 @@
+---
+# Basic configurations for a machine, mainly network utilities
+- name: Install basic packages
+  apt:
+    update_cache: yes
+    pkg:
+    - etckeeper
+    - tmux
+    - htop
+    - net-tools
+    - dnsutils
+    - traceroute
+    - iputils-ping
+    - telnet
+    - tcpdump
+    - nmap
+- name: Manage firewall
+  ufw:
+    rule: allow
+    port: ssh
+    state: enabled
